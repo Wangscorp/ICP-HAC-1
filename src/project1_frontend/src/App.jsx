@@ -1,9 +1,9 @@
-// src/App.js
+
 import React, { useState, useEffect } from 'react';
 import { trustSystem } from './agent';
 import { initIdentity } from './identity';
 
-function App() {
+export default function App() {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
   const [message, setMessage] = useState('');
@@ -64,8 +64,4 @@ function App() {
       setMessage(`Error: ${error.message}`);
     }
   };
-
-  const refundOrder = async (orderId) => {
-    try {
-      const result = await trustSystem.refundOrder(orderId);
-      if (result)
+}
